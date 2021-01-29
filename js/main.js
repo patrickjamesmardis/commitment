@@ -11,14 +11,13 @@ let randColor = (randR, randG, randB) => {
 }
 rowTags.forEach(row => {
     const colorMode = Math.floor(Math.random() * 3);
-    console.log(colorMode);
     for (let i = 0; i < 100; i++) {
         const div = document.createElement("div");
         div.classList.add("pixel");
-        let id = "pixel" + (i + 1);
-        div.setAttribute("id", id);
+        const classID = "pixel" + (i + 1);
+        div.classList.add(classID);
         switch (colorMode) {
-            case 0:
+            // case 0:
             //     div.style.backgroundColor = randColor(true, false, false);
             //     break;
             // case 1:
