@@ -35,7 +35,8 @@ section.divs div {
 }
 
 section#divs1 div {
-    background-color: #F24236;
+    background-color: #fff;
+    /* background-color: #F24236; */
 }
 
 section#divs1 div:nth-child(2) {
@@ -79,7 +80,8 @@ section#divs2 {
 }
 
 section#divs2 div {
-    background-color: #2E86AB;
+    /* background-color: #2E86AB; */
+    background-color: #fff;
 }
 
 section#divs2 div:nth-child(2) {
@@ -125,7 +127,8 @@ section#divs3 {
 }
 
 section#divs3 div {
-    background-color: #F6F5AE;
+    /* background-color: #F6F5AE; */
+    background-color: #fff;
 }
 
 section#divs3 div:nth-child(2) {
@@ -188,4 +191,19 @@ section#divs3 div:nth-child(16) {
 }
 section#divs3 div:nth-child(17) {
     height: 26vh;
+}
+
+section.row {
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: flex;
+    width: 100vw;
+    height: 1vw;
+    z-index: -2;
+}
+
+div.pixel {
+    width: 1vw;
+    height: 1vh;
 }

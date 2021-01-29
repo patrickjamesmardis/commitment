@@ -1,22 +1,37 @@
 const mainTag = document.querySelector("main");
-let makeBoxes = (numSqaures, startW, startH, increaseW, increaseH, moveW, moveH, color) => {
-    let w = startW;
-    let h = startH;
-    let totalW = 0;
-    let totalH = 0;
-    for (let i = 0; i < numSqaures; i++) {
-        const div = document.createElement("div");
-        div.style.width = w + "vw";
-        div.style.height = h + "vh";
-        div.style.left = totalW + "vw";
-        div.style.top = totalH + "vh";
-        div.style.backgroundColor = color;
-        mainTag.appendChild(div);
-        moveW ? totalW += w : totalW = totalW;
-        moveH ? totalH += h : totalH = totalH;
-        increaseW ? w += increaseW : w = w;
-        increaseH ? h += increaseH : h = h;
-    }
-}
+const rowTags = document.querySelectorAll("section.row");
+let count = 0;
 
-makeBoxes(10, 10, 10, 0, 1, true, false, "#FF5A36");
+let randColor = (randR, randG, randB) => {
+    let r, g, b;
+    randR ? r = Math.floor((Math.random() * 256)) : r = 50;
+    randG ? g = Math.floor((Math.random() * 256)) : g = 0;
+    randB ? b = Math.floor((Math.random() * 256)) : b = 100;
+    return `rgb(${r},${g},${b})`;
+}
+rowTags.forEach(row => {
+    const colorMode = Math.floor(Math.random() * 3);
+    console.log(colorMode);
+    for (let i = 0; i < 100; i++) {
+        const div = document.createElement("div");
+        div.classList.add("pixel");
+        let id = "pixel" + (i + 1);
+        div.setAttribute("id", id);
+        switch (colorMode) {
+            case 0:
+            //     div.style.backgroundColor = randColor(true, false, false);
+            //     break;
+            // case 1:
+            //     div.style.backgroundColor = randColor(false, true, false);
+            //     break;
+            // case 2:
+            //     div.style.backgroundColor = randColor(false, false, true);
+            //     break;
+        }
+        row.appendChild(div);
+
+    }
+    row.style.top = count + "vh";
+    // row.style.backgroundColor = randColor(true, true, true);
+    count++;
+});
