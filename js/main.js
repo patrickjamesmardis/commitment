@@ -3,26 +3,26 @@ let delay = 0;
 let position = 0;
 tl.set("circle", { opacity: 0 });
 
-// tl.set(".rows .row5.col5", {
-//     r: 10
-// }).to(".rows .row5.col5", {
-//     opacity: 1
-// }).to(".rows .row5.col5", {
-//     r: 100,
-//     repeat: 5,
-//     yoyo: true,
-//     duration: 1.5,
-//     delay: .3,
-//     repeatDelay: .3,
-//     ease: "circ.inout"
-// }).to(".rows .row5.col5", {
-//     r: 1,
-//     duration: .16,
-//     opacity: 0
-// }).to(".rows .row5", {
-//     opacity: 1,
-//     stagger: 0.25
-// });
+tl.set(".rows .row5.col5", {
+    r: 10
+}).to(".rows .row5.col5", {
+    opacity: 1
+}).to(".rows .row5.col5", {
+    r: 100,
+    repeat: 5,
+    yoyo: true,
+    duration: 1.5,
+    delay: .3,
+    repeatDelay: .3,
+    ease: "circ.inout"
+}).to(".rows .row5.col5", {
+    r: 1,
+    duration: .16,
+    opacity: 0
+}).to(".rows .row5", {
+    opacity: 1,
+    stagger: 0.25
+});
 
 tl.set(".rows .row4, .rows .row6", {
     cy: "50%"
@@ -134,4 +134,26 @@ tl.set("rect", {
     }
 }).to(".cols circle", {
     opacity: 0
+});
+tl.set(".grid rect", {
+    opacity: 0
+});
+
+let randPercent = () => {
+    return (Math.floor(Math.random() * 10) * 10) + "%";
+}
+tl.set(".moveme1", {
+    width: 1,
+    height: 1
+}).to(".moveme1", {
+    height: () => { return randPercent() },
+    stagger: 0.1
+}).set(".moveme2", {
+    width: 1,
+    height: 1
+}).to(".moveme2", {
+    width: () => { return randPercent() },
+    stagger: 0.1
+}).to(".grid rect", {
+    opacity: 1
 });
