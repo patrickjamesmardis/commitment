@@ -12,7 +12,7 @@ int main(int argc, char* argv[])
     int count = 1;
     if (fin.is_open()) {
         ofstream fout("less/main.less");
-        fout << "@orange: #FF5A36;\n@blue : #19647E;\n@gray : #B2ABBF;\n@yellow : #EDEEC9;\n@black : #090909;\n";
+        fout << "@blue1: #102940;\n@blue2 : #4F738D;\n@blue3 : #6EB1CC;\n@blue4 : #93C9d8;\n@blue5 : #D3F0EB;\n";
         while (getline(fin, line)) {
             stringstream lineStream(line);
             string data;
@@ -20,15 +20,15 @@ int main(int argc, char* argv[])
                 getline(lineStream, data, ',');
                 fout << "#row" << count << " .pixel" << i << "{\n\tbackground-color: @";
                 if (data == "g")
-                    fout << "gray;\n}";
+                    fout << "blue1;\n}";
                 else if (data == "o")
-                    fout << "orange;\n}";
+                    fout << "blue2;\n}";
                 else if (data == "b")
-                    fout << "blue;\n}";
+                    fout << "blue3;\n}";
                 else if (data == "y")
-                    fout << "yellow;\n}";
+                    fout << "blue4;\n}";
                 else
-                    fout << "black;\n}";
+                    fout << "blue5;\n}";
             }
             count++;
         }
