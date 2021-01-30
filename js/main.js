@@ -1,25 +1,28 @@
 let tl = gsap.timeline();
+let delay = 0;
+let position = 0;
 tl.set("circle", { opacity: 0 });
-tl.set(".row5.col6", {
-    r: 10
-}).to(".row5.col6", {
-    opacity: 1
-}).to(".row5.col6", {
-    r: 100,
-    repeat: 5,
-    yoyo: true,
-    duration: 1.5,
-    delay: .3,
-    repeatDelay: .3,
-    ease: "circ.inout"
-}).to(".row5.col6", {
-    r: 1,
-    duration: .16,
-    opacity: 0
-}).to(".row5", {
-    opacity: 1,
-    stagger: 0.25
-});
+
+// tl.set(".row5.col6", {
+//     r: 10
+// }).to(".row5.col6", {
+//     opacity: 1
+// }).to(".row5.col6", {
+//     r: 100,
+//     repeat: 5,
+//     yoyo: true,
+//     duration: 1.5,
+//     delay: .3,
+//     repeatDelay: .3,
+//     ease: "circ.inout"
+// }).to(".row5.col6", {
+//     r: 1,
+//     duration: .16,
+//     opacity: 0
+// }).to(".row5", {
+//     opacity: 1,
+//     stagger: 0.25
+// });
 
 tl.set(".row4, .row6", {
     cy: "50%"
@@ -65,4 +68,27 @@ tl.set(".row4, .row6", {
         return el < 11 ? "0%" : "100%";
     },
     opacity: 1
+}).to("circle", {
+    cy: 0
+}).to("circle", {
+    cy: "100%",
+    delay: (el) => { // 11 circles makes a row
+        delay = (el % 11 == 0) ? delay + .01 : delay;
+        return delay;
+    }
+}).to("circle", {
+    cy: (el) => {
+        position = (el % 11 == 0) ? position + 10 : position;
+        return position + "%";
+    }
 });
+
+delay = 0;
+position = 0;
+
+tl.to("circle", {
+    cx: 0
+}).to("circle", {
+    cx: "100%",
+    stagger: 0.1
+})
