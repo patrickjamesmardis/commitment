@@ -139,9 +139,9 @@ tl.set("circle", { opacity: 0 });
 //     opacity: 0
 // });
 
-// let randPercent = () => {
-//     return (Math.floor(Math.random() * 10) * 10) + "%";
-// }
+let randPercent = () => {
+    return (Math.floor(Math.random() * 10) * 10) + "%";
+}
 // tl.set(".moveme1, .moveme2", {
 //     width: 1,
 //     height: 1
@@ -250,3 +250,65 @@ tl.set(".rows .row0.col0, .rows .row0.col1, .rows .row0.col2, .rows .row0.col3, 
     opacity: 1
 });
 
+
+
+tl.set(".moveme1, .moveme2", {
+    width: 1,
+    height: 1
+}).to(".moveme1, .moveme2", {
+    height: (el) => {
+        return el < 7 ? randPercent() : 1;
+    },
+    width: (el) => {
+        return el < 7 ? 1 : randPercent();
+    },
+    stroke: "#FF5A36",
+    stagger: 0.1
+}).to(".moveme1, .moveme2", {
+    width: 1,
+    height: 1,
+    stagger: 0.1
+}).set(".moveme1, .moveme2", {
+    stroke: "#dfdfdf"
+}).to(".moveme1, .moveme2", {
+    height: (el) => {
+        return el < 7 ? randPercent() : 1;
+    },
+    width: (el) => {
+        return el < 7 ? 1 : randPercent();
+    },
+    stroke: "#FF5A36",
+    stagger: 0.1
+}).to(".moveme1, .moveme2", {
+    width: 1,
+    height: 1,
+    stagger: 0.1
+}).set(".moveme1, .moveme2", {
+    stroke: "#dfdfdf"
+}).to(".moveme1, .moveme2", {
+    height: (el) => {
+        return el < 7 ? randPercent() : 1;
+    },
+    width: (el) => {
+        return el < 7 ? 1 : randPercent();
+    },
+    stroke: "#FF5A36",
+    stagger: 0.1
+}).to(".moveme1, .moveme2", {
+    rotation: 45
+}).to(".moveme1, .moveme2", {
+    x: "100000%",
+    y: "1000%",
+    stagger: 0.1
+});
+tl.set(".moveme1, .moveme2", {
+    x: (el) => {
+        return el < 7 ? randPercent() : 0
+    },
+    y: (el) => {
+        return el < 7 ? 0 : randPercent();
+    },
+    width: 0,
+    height: 0,
+    stroke: "#dfdfdf"
+});
