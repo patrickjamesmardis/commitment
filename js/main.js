@@ -1,5 +1,6 @@
 let tl = gsap.timeline();
 
+let highlightColor = "#0000FF";
 // delay for rows moving top to bottom
 let delay1 = 0;
 // position for rows moving back to grid from bottom
@@ -10,9 +11,15 @@ let delay2 = -.01;
 let position2 = -10;
 // position for rows moving from rotation to grid
 let position3 = -10;
+// position for random rows moving from center to grid
+let position4 = -10;
+// position for all rows moving from center to grid, cx
+let position5 = -10;
+// position for all rows moving from center to grid, cy
+let position6 = -10;
 
 // function to get a random percent divisible by 10 (0, 10, 20, ... 100)
-let randPercent = () => {
+const randPercent = () => {
     return (Math.floor(Math.random() * 11) * 10) + "%";
 }
 
@@ -133,21 +140,23 @@ tl.set("circle", { opacity: 0 })
     });
 // set random dots to orange
 for (let i = 0; i < 30; i++) {
-    let rand1 = Math.floor(Math.random() * 10);
-    let rand2 = Math.floor(Math.random() * 10);
-    tl.to(`.cols .row${rand1}.col${rand2}`, {
-        stroke: "#FF5A35",
-        duration: 0.1
-    });
+    tl.to(`.cols .row${Math.floor(Math.random() * 11)}.col${Math.floor(Math.random() * 11)}`, {
+        stroke: highlightColor,
+        duration: 0.1,
+    })
 }
 // all back to white
 tl.to(".cols circle", {
     stroke: "#dfdfdf"
 })
     // connect the grid
-    .set(".grid rect", {
-        width: 1,
-        height: 1
+    .set(".vertical, .horizontal", {
+        width: (el) => {
+            return el < 7 ? 1 : 0;
+        },
+        height: (el) => {
+            return el < 7 ? 0 : 1;
+        },
     }).to(".vertical, .horizontal", {
         height: (el) => {
             return el < 11 ? "100%" : 1;
@@ -164,8 +173,12 @@ tl.to(".cols circle", {
     })
     // slide moveme rects out to random widths/heights
     .set(".movemeV, .movemeH", {
-        width: 1,
-        height: 1
+        width: (el) => {
+            return el < 7 ? 1 : 0;
+        },
+        height: (el) => {
+            return el < 7 ? 0 : 1;
+        }
     }).to(".movemeV, .movemeH", {
         height: (el) => {
             return el < 7 ? randPercent() : 1;
@@ -195,7 +208,7 @@ tl.to(".cols circle", {
         width: (el) => {
             return el < 7 ? 1 : randPercent();
         },
-        stroke: "#FF5A36",
+        stroke: highlightColor,
         stagger: 0.1
     }).to(".movemeV, .movemeH", {
         width: (el) => {
@@ -214,7 +227,7 @@ tl.to(".cols circle", {
         width: (el) => {
             return el < 7 ? 1 : randPercent();
         },
-        stroke: "#FF5A36",
+        stroke: highlightColor,
         stagger: 0.1
     })
     // pulse moveme rects then reset to white
@@ -258,7 +271,7 @@ tl.to(".cols circle", {
         width: (el) => {
             return el < 7 ? 1 : randPercent();
         },
-        stroke: "#FF5A36",
+        stroke: highlightColor,
         stagger: 0.1
     }).to(".movemeV, .movemeH", {
         width: (el) => {
@@ -277,7 +290,7 @@ tl.to(".cols circle", {
         width: (el) => {
             return el < 7 ? 1 : randPercent();
         },
-        stroke: "#FF5A36",
+        stroke: highlightColor,
         stagger: 0.1
     }).to(".movemeV, .movemeH", {
         width: (el) => {
@@ -296,7 +309,7 @@ tl.to(".cols circle", {
         width: (el) => {
             return el < 7 ? 1 : randPercent();
         },
-        stroke: "#FF5A36",
+        stroke: highlightColor,
         stagger: 0.1
     }).to(".movemeV, .movemeH", {
         width: (el) => {
@@ -330,14 +343,61 @@ tl.to(".cols circle", {
         r: "10%",
         duration: 3,
         yoyo: true,
-        repeat: 4,
+        repeat: 3,
         ease: "power1.inOut",
         repeatDelay: 0.01
     }).to("#dashCircle", {
         r: 0,
-        opacity: 0
+        duration: 2
     }).to("#dashCircle", {
         r: "100%",
         opacity: 1,
-        duration: 1.5
-    });
+        duration: 2
+    })
+    // stagger in dots grid
+    .to(".rows circle", {
+        opacity: 1,
+        stagger: 0.02,
+        ease: "circ.in"
+    })
+    // highlight random rows, stagger to center
+    .to(`.rows .row${Math.floor(Math.random() * 11)}`, {
+        stroke: highlightColor,
+        stagger: 0.1,
+        cx: "50%"
+    }).to(`.rows .row${Math.floor(Math.random() * 11)}`, {
+        stroke: highlightColor,
+        stagger: -0.1,
+        cx: "50%"
+    }).to(`.rows .row${Math.floor(Math.random() * 11)}`, {
+        stroke: highlightColor,
+        stagger: -0.1,
+        cx: "50%"
+    })
+    // all back to grid
+    .to(".rows circle", {
+        cx: (el) => {
+            position4 = (el % 11 == 0) ? 0 : position4 + 10;
+            return position4 + "%";
+        },
+        stroke: "#dfdfdf"
+    })
+    // all to center
+    .to(".rows circle", {
+        cx: "50%",
+        cy: "50%",
+        opacity: 0
+    })
+    // reset back to grid
+    .set(".rows circle", {
+        cx: (el) => {
+            position5 = (el % 11 == 0) ? 0 : position5 + 10;
+            return position5 + "%";
+        },
+        cy: (el) => {
+            position6 = (el % 11 == 0) ? position6 + 10 : position6;
+            return position6 + "%";
+        }
+    }).to("body", {
+        backgroundColor: "linear-gradient(#FFFFFF, #0000FF)"
+    })
