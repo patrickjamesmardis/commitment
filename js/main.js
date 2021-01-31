@@ -22,7 +22,15 @@ let position6 = -10;
 const randPercent = () => {
     return (Math.floor(Math.random() * 11) * 10) + "%";
 }
-
+// set random dots to highlight color
+const randomHighlight = () => {
+    for (let i = 0; i < 30; i++) {
+        tl.to(`.cols .row${Math.floor(Math.random() * 11)}.col${Math.floor(Math.random() * 11)}`, {
+            stroke: highlightColor,
+            duration: 0.1,
+        });
+    }
+}
 // hide all circles
 tl.set("circle", { opacity: 0 })
     // pulse center circle
@@ -137,18 +145,11 @@ tl.set("circle", { opacity: 0 })
             return position2 + "%";
         },
         duration: 1.5
-    });
-// set random dots to highlight color
-for (let i = 0; i < 30; i++) {
-    tl.to(`.cols .row${Math.floor(Math.random() * 11)}.col${Math.floor(Math.random() * 11)}`, {
-        stroke: highlightColor,
-        duration: 0.1,
-    });
-}
-// all back to white
-tl.to(".cols circle", {
-    stroke: "#dfdfdf"
-})
+    }).call(randomHighlight())
+    // all back to white
+    .to(".cols circle", {
+        stroke: "#dfdfdf"
+    })
     // connect the grid
     .set(".vertical, .horizontal", {
         width: (el) => {
