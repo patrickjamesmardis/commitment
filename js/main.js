@@ -145,7 +145,9 @@ tl.set("circle", { opacity: 0 })
             return position2 + "%";
         },
         duration: 1.5
-    }).call(randomHighlight())
+    })
+    // highlight random dots
+    .call(randomHighlight())
     // all back to white
     .to(".cols circle", {
         stroke: "#dfdfdf"
@@ -356,27 +358,27 @@ tl.set("circle", { opacity: 0 })
         duration: 2
     })
     // stagger in dots grid
-    .to(".rows circle", {
+    .to(".cols circle", {
         opacity: 1,
         stagger: 0.02,
         ease: "circ.in"
     })
     // highlight random rows, stagger to center
-    .to(`.rows .row${Math.floor(Math.random() * 11)}`, {
+    .to(`.cols .row${Math.floor(Math.random() * 11)}`, {
         stroke: highlightColor,
         stagger: 0.1,
         cx: "50%"
-    }).to(`.rows .row${Math.floor(Math.random() * 11)}`, {
+    }).to(`.cols .row${Math.floor(Math.random() * 11)}`, {
         stroke: highlightColor,
         stagger: -0.1,
         cx: "50%"
-    }).to(`.rows .row${Math.floor(Math.random() * 11)}`, {
+    }).to(`.cols .row${Math.floor(Math.random() * 11)}`, {
         stroke: highlightColor,
         stagger: -0.1,
         cx: "50%"
     })
     // all back to grid
-    .to(".rows circle", {
+    .to(".cols circle", {
         cx: (el) => {
             position4 = (el % 11 == 0) ? 0 : position4 + 10;
             return position4 + "%";
@@ -384,13 +386,12 @@ tl.set("circle", { opacity: 0 })
         stroke: "#dfdfdf"
     })
     // all to center
-    .to(".rows circle", {
+    .to(".cols circle", {
         cx: "50%",
-        cy: "50%",
-        opacity: 0
+        cy: "50%"
     })
     // reset back to grid
-    .set(".rows circle", {
+    .set(".cols circle", {
         cx: (el) => {
             position5 = (el % 11 == 0) ? 0 : position5 + 10;
             return position5 + "%";
@@ -399,4 +400,45 @@ tl.set("circle", { opacity: 0 })
             position6 = (el % 11 == 0) ? position6 + 10 : position6;
             return position6 + "%";
         }
+    }).set("#movemeV0", {
+        x: () => {
+            return (window.innerWidth / 2) - (.2 * window.innerWidth);
+        },
+        y: () => {
+            return (window.innerHeight / 2) - (.2 * window.innerHeight);
+        },
+        width: 1,
+        height: 1
+    }).to("#movemeV0", {
+        width: "40%",
+        height: "40%",
+        duration: 1.5,
+        stroke: highlightColor,
+        strokeWidth: 15,
+    }).to("#movemeV0", {
+        width: "0",
+        repeat: 1,
+        duration: 1.5,
+        yoyo: true
+    }).to("#movemeV0", {
+        height: ".1%",
+        repeat: 1,
+        duration: 1.5,
+        yoyo: true
+    }).to("#movemeV0", {
+        width: "0%",
+        height: "0%",
+        repeat: 3,
+        duration: 1.5,
+        yoyo: true
+    }).to("#movemeV0", {
+        rotation: 180,
+        duration: 1.5,
+        opacity: 0
+    }).set("#movemeV0", {
+        rotation: 0,
+        x: 0,
+        y: 0,
+        width: 0,
+        height: 0
     })
