@@ -1,5 +1,5 @@
 let tl = gsap.timeline();
-
+tl.pause();
 let highlightColor = "#0000FF";
 // delay for rows moving top to bottom
 let delay1 = 0;
@@ -391,7 +391,7 @@ tl.set("circle", { opacity: 0 })
         cy: "50%"
     })
     // reset back to grid
-    .set(".cols circle", {
+    .to(".cols circle", {
         cx: (el) => {
             position5 = (el % 11 == 0) ? 0 : position5 + 10;
             return position5 + "%";
@@ -426,8 +426,8 @@ tl.set("circle", { opacity: 0 })
         duration: 1.5,
         yoyo: true
     }).to("#movemeV0", {
-        width: "0%",
-        height: "0%",
+        width: ".1%",
+        height: ".1%",
         repeat: 3,
         duration: 1.5,
         yoyo: true
@@ -441,4 +441,197 @@ tl.set("circle", { opacity: 0 })
         y: 0,
         width: 0,
         height: 0
+    }).to(".cols", {
+        transformOrigin: "center center",
+        rotation: 180,
+        duration: 1.5
+    }).to(".cols circle", {
+        x: () => {
+            return (Math.floor(Math.random() * 11) * 100) + "%";
+        },
+        y: () => {
+            return (Math.floor(Math.random() * 11) * 100) + "%";
+        },
+        duration: 0.1
+    }).to(".cols circle", {
+        x: () => {
+            return (Math.floor(Math.random() * 11) * 100) + "%";
+        },
+        y: () => {
+            return (Math.floor(Math.random() * 11) * 100) + "%";
+        },
+        duration: 0.1
+    }).to(".cols circle", {
+        x: () => {
+            return (Math.floor(Math.random() * 11) * 100) + "%";
+        },
+        y: () => {
+            return (Math.floor(Math.random() * 11) * 100) + "%";
+        },
+        duration: 0.1
+    }).to(".cols circle", {
+        x: () => {
+            return (Math.floor(Math.random() * 11) * 100) + "%";
+        },
+        y: () => {
+            return (Math.floor(Math.random() * 11) * 100) + "%";
+        },
+        duration: 0.1
+    }).to(".cols circle", {
+        x: () => {
+            return (Math.floor(Math.random() * 11) * 100) + "%";
+        },
+        y: () => {
+            return (Math.floor(Math.random() * 11) * 100) + "%";
+        },
+        duration: 0.1
+    }).to(".cols circle", {
+        x: () => {
+            return (Math.floor(Math.random() * 11) * 100) + "%";
+        },
+        y: () => {
+            return (Math.floor(Math.random() * 11) * 100) + "%";
+        },
+        duration: 0.1
+    }).to(".cols circle", {
+        x: () => {
+            return (Math.floor(Math.random() * 11) * 100) + "%";
+        },
+        y: () => {
+            return (Math.floor(Math.random() * 11) * 100) + "%";
+        },
+        duration: 0.1
+    }).to(".cols circle", {
+        x: () => {
+            return (Math.floor(Math.random() * 11) * 100) + "%";
+        },
+        y: () => {
+            return (Math.floor(Math.random() * 11) * 100) + "%";
+        },
+        duration: 0.1
+    }).to(".cols circle", {
+        x: () => {
+            return (Math.floor(Math.random() * 11) * 100) + "%";
+        },
+        y: () => {
+            return (Math.floor(Math.random() * 11) * 100) + "%";
+        },
+        duration: 0.1
+    }).to(".cols circle", {
+        x: () => {
+            return (Math.floor(Math.random() * 11) * 100) + "%";
+        },
+        y: () => {
+            return (Math.floor(Math.random() * 11) * 100) + "%";
+        },
+        duration: 0.1
+    }).to(".cols circle", {
+        x: () => {
+            return (Math.floor(Math.random() * 11) * 100) + "%";
+        },
+        y: () => {
+            return (Math.floor(Math.random() * 11) * 100) + "%";
+        },
+        duration: 0.1
+    }).to(".cols circle", {
+        x: () => {
+            return (Math.floor(Math.random() * 11) * 100) + "%";
+        },
+        y: () => {
+            return (Math.floor(Math.random() * 11) * 100) + "%";
+        },
+        duration: 0.1
+    }).to(".cols circle", {
+        x: () => {
+            return (Math.floor(Math.random() * 11) * 100) + "%";
+        },
+        y: () => {
+            return (Math.floor(Math.random() * 11) * 100) + "%";
+        },
+        duration: 0.1
+    }).to(".cols circle", {
+        x: () => {
+            return (Math.floor(Math.random() * 11) * 100) + "%";
+        },
+        y: () => {
+            return (Math.floor(Math.random() * 11) * 100) + "%";
+        },
+        duration: 0.1
+    }).to(".cols circle", {
+        x: () => {
+            return (Math.floor(Math.random() * 11) * 100) + "%";
+        },
+        y: () => {
+            return (Math.floor(Math.random() * 11) * 100) + "%";
+        },
+        duration: 0.1
+    }).to(".cols circle", {
+        x: () => {
+            return (Math.floor(Math.random() * 11) * 100) + "%";
+        },
+        y: () => {
+            return (Math.floor(Math.random() * 11) * 100) + "%";
+        },
+        duration: 0.1
+    }).to(".cols circle", {
+        x: () => {
+            return (Math.floor(Math.random() * 11) * 100) + "%";
+        },
+        y: () => {
+            return (Math.floor(Math.random() * 11) * 100) + "%";
+        },
+        duration: 0.1
+    }).to(".cols circle", {
+        x: () => {
+            return (Math.floor(Math.random() * 11) * 100) + "%";
+        },
+        y: () => {
+            return (Math.floor(Math.random() * 11) * 100) + "%";
+        },
+        duration: 0.1
+    }).to(".cols circle", {
+        x: () => {
+            return (Math.floor(Math.random() * 11) * 100) + "%";
+        },
+        y: () => {
+            return (Math.floor(Math.random() * 11) * 100) + "%";
+        },
+        duration: 0.1
+    }).to(".cols circle", {
+        x: () => {
+            return (Math.floor(Math.random() * 11) * 100) + "%";
+        },
+        y: () => {
+            return (Math.floor(Math.random() * 11) * 100) + "%";
+        },
+        duration: 0.1
+    }).to(".cols circle", {
+        x: () => {
+            return (Math.floor(Math.random() * 11) * 100) + "%";
+        },
+        y: () => {
+            return (Math.floor(Math.random() * 11) * 100) + "%";
+        },
+        duration: 0.1
+    }).to(".cols circle", {
+        x: () => {
+            return (Math.floor(Math.random() * 11) * 100) + "%";
+        },
+        y: () => {
+            return (Math.floor(Math.random() * 11) * 100) + "%";
+        },
+        duration: 0.1
+    }).to(".cols circle", {
+        x: () => {
+            return (Math.floor(Math.random() * 11) * 100) + "%";
+        },
+        y: () => {
+            return (Math.floor(Math.random() * 11) * 100) + "%";
+        },
+        duration: 0.1
+    }).to(".cols circle", {
+        x: 0,
+        y: 0
     })
+
+tl.play(107)
