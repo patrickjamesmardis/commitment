@@ -39,6 +39,7 @@ tl.set("circle", { opacity: 0 })
         repeatDelay: .3,
         ease: "circ.inout"
     })
+    // stagger in "hello" then out
     .to(".hello", {
         opacity: 1,
         stagger: 0.14
@@ -513,6 +514,8 @@ tl.set("circle", { opacity: 0 })
         transformOrigin: "center center",
         rotation: 180,
         duration: 1.5
+    }).set(".cols", {
+        rotation: 0
     })
     // wiggle to random positions then all back to home position
     .to(".cols circle", {
@@ -680,6 +683,19 @@ tl.set("circle", { opacity: 0 })
     .to(".cols circle", {
         x: 0,
         y: 0,
-        opacity: 0
+        opacity: 0,
     })
-tl.play()
+    .set(".cols .col2.row2, .cols .col7.row3", {
+        r: 0,
+        opacity: 1,
+    })
+    .to(".cols .col2.row2", {
+        r: 25,
+        repeat: 3,
+        yoyo: true
+    }).to(".cols .col2.row2", {
+        r: 25,
+        repeat: 2,
+        yoyo: true
+    })
+tl.play(95)
