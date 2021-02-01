@@ -36,3 +36,7 @@ text.hello {
     opacity: 0;
     font-size: 36px;
 }
+
+#blob {
+    opacity: 0;
+}
