@@ -515,7 +515,7 @@ tl.set("circle", { opacity: 0 })
         rotation: 180,
         duration: 1.5
     }).set(".cols", {
-        rotation: 0
+        rotation: 360
     })
     // wiggle to random positions then all back to home position
     .to(".cols circle", {
@@ -685,7 +685,7 @@ tl.set("circle", { opacity: 0 })
         y: 0,
         opacity: 0,
     })
-    .set(".cols .col2.row2, .cols .col7.row3", {
+    .set(".cols .col2.row2, .cols .col3.row7, .cols .col7.row2", {
         r: 0,
         opacity: 1,
     })
@@ -693,9 +693,13 @@ tl.set("circle", { opacity: 0 })
         r: 25,
         repeat: 3,
         yoyo: true
-    }).to(".cols .col2.row2", {
+    }).to(".cols .col3.row7", {
         r: 25,
-        repeat: 2,
+        repeat: 3,
+        yoyo: true
+    }).to(".cols .col7.row2", {
+        r: 25,
+        repeat: 3,
         yoyo: true
     })
-tl.play(95)
+tl.play(110)
