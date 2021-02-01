@@ -754,5 +754,17 @@ tl.set("circle", { opacity: 0 })
         repeat: 1,
         yoyo: true,
         stagger: 0.01
+    }).set("#blob", {
+        x: "-100%",
+        y: "-100%",
+        opacity: 1
+    })
+    .to("#blob", {
+        x: "100%",
+        y: "100%",
+        scale: 2,
+        duration: 2.5
+    }).set("path", {
+        scale: 1
     })
 tl.play(132)
