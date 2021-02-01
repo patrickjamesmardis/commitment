@@ -682,4 +682,4 @@ tl.set("circle", { opacity: 0 })
         y: 0,
         opacity: 0
     })
-tl.play(10)
+tl.play()
