@@ -771,10 +771,28 @@ tl.set("circle", { opacity: 0 })
         ease: "sine.inOut",
         scale: (el) => { return el == 0 ? 1 : 1.5 },
         duration: 2.5
-    }).set("path", {
+    }).set("#blob", {
         scale: 1,
         x: 0,
         y: 0,
         opacity: 0
+    }).to(".grid rect", {
+        rotation: 45,
+        repeat: 1,
+        yoyo: true
+    }).to(".grid rect", {
+        rotation: -45,
+        repeat: 1,
+        yoyo: true
+    }).to(".grid rect", {
+        rotation: (el) => { return el < 10 ? 30 : -45 },
+        repeat: 1,
+        yoyo: true,
+        transformOrigin: "bottom right"
+    }).to(".grid rect", {
+        rotation: (el) => { return el < 10 ? -30 : 45 },
+        repeat: 1,
+        yoyo: true,
+        transformOrigin: "bottom right"
     })
-tl.play()
+tl.play(137)
