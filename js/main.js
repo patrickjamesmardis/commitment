@@ -220,7 +220,7 @@ tl.set("circle", { opacity: 0 })
             return el < 7 ? 1 : 0;
         },
         height: (el) => {
-            return el < 7 ? 0 : 1;
+            return el < 7 ? ".1%" : 1;
         },
     }).to(".vertical, .horizontal", {
         height: (el) => {
@@ -242,7 +242,7 @@ tl.set("circle", { opacity: 0 })
             return el < 7 ? 1 : 0;
         },
         height: (el) => {
-            return el < 7 ? 0 : 1;
+            return el < 7 ? ".1%" : 1;
         }
     }).to(".movemeV, .movemeH", {
         height: (el) => {
@@ -263,7 +263,7 @@ tl.set("circle", { opacity: 0 })
             return el < 7 ? 1 : 0;
         },
         height: (el) => {
-            return el < 7 ? 0 : 1;
+            return el < 7 ? ".1%" : 1;
         },
         stagger: 0.1
     }).to(".movemeV, .movemeH", {
@@ -280,7 +280,7 @@ tl.set("circle", { opacity: 0 })
             return el < 7 ? 1 : 0;
         },
         height: (el) => {
-            return el < 7 ? 0 : 1;
+            return el < 7 ? ".1%" : 1;
         },
         stagger: 0.1,
     }).set(".movemeV, .movemeH", {
@@ -307,7 +307,7 @@ tl.set("circle", { opacity: 0 })
     })
     // grid to 0 widths/heights
     .to(".grid .vertical", {
-        height: 0,
+        height: ".1%",
         stagger: 0.1
     }).to(".grid .horizontal", {
         width: 0,
@@ -332,7 +332,7 @@ tl.set("circle", { opacity: 0 })
             return el < 7 ? 1 : 0;
         },
         height: (el) => {
-            return el < 7 ? 0 : 1;
+            return el < 7 ? ".1%" : 1;
         }
     }).to(".movemeV, .movemeH", {
         height: (el) => {
@@ -348,7 +348,7 @@ tl.set("circle", { opacity: 0 })
             return el < 7 ? 1 : 0;
         },
         height: (el) => {
-            return el < 7 ? 0 : 1;
+            return el < 7 ? ".1%" : 1;
         },
         stagger: 0.1
     }).set(".movemeV, .movemeH", {
@@ -367,7 +367,7 @@ tl.set("circle", { opacity: 0 })
             return el < 7 ? 1 : 0;
         },
         height: (el) => {
-            return el < 7 ? 0 : 1;
+            return el < 7 ? ".1%" : 1;
         },
         stagger: 0.1
     }).set(".movemeV, .movemeH", {
@@ -386,11 +386,14 @@ tl.set("circle", { opacity: 0 })
             return el < 7 ? 1 : 0;
         },
         height: (el) => {
-            return el < 7 ? 0 : 1;
+            return el < 7 ? ".1%" : 1;
         },
         stagger: 0.1
     }).set(".movemeV, .movemeH", {
-        stroke: "#dfdfdf"
+        stroke: "#dfdfdf",
+        height: (el) => {
+            return el < 7 ? 0 : 1;
+        },
     })
     // rotate dots grid
     .to(".rows", {
@@ -794,5 +797,77 @@ tl.set("circle", { opacity: 0 })
         repeat: 1,
         yoyo: true,
         transformOrigin: "bottom right"
-    })
-tl.play(137)
+    }).to(".movemeV, .movemeH", {
+        height: (el) => {
+            return el < 7 ? randPercent() : 1;
+        },
+        width: (el) => {
+            return el < 7 ? 1 : randPercent();
+        },
+        stagger: 0.1
+    }).to(".grid rect", {
+        height: (el) => {
+            return el < 11 ? randPercent() : 1;
+        },
+        width: (el) => {
+            return el < 11 ? 1 : randPercent();
+        },
+        stagger: 0.1
+    }).to(".movemeV, .movemeH", {
+        height: (el) => {
+            return el < 7 ? randPercent() : 1;
+        },
+        width: (el) => {
+            return el < 7 ? 1 : randPercent();
+        },
+        stagger: 0.1
+    }).to(".grid rect", {
+        height: (el) => {
+            return el < 11 ? randPercent() : 1;
+        },
+        width: (el) => {
+            return el < 11 ? 1 : randPercent();
+        },
+        stagger: 0.1
+    }).to(".movemeV, .movemeH", {
+        height: (el) => {
+            return el < 7 ? randPercent() : 1;
+        },
+        width: (el) => {
+            return el < 7 ? 1 : randPercent();
+        },
+        stagger: 0.1
+    }).to(".grid rect", {
+        height: (el) => {
+            return el < 11 ? randPercent() : 1;
+        },
+        width: (el) => {
+            return el < 11 ? 1 : randPercent();
+        },
+        stagger: 0.1
+    }).to(".movemeV, .movemeH", {
+        height: (el) => {
+            return el < 7 ? randPercent() : 1;
+        },
+        width: (el) => {
+            return el < 7 ? 1 : randPercent();
+        },
+        stagger: 0.1,
+        stroke: highlightColor
+    }).to(".movemeV, .movemeH, .grid rect", {
+        height: (el) => {
+            return el < 7 ? ".1%" : el < 14 ? 1 : el < 25 ? "100%" : 1;
+        },
+        width: (el) => {
+            return el < 7 ? 1 : el < 14 ? 0 : el < 25 ? 1 : "100%";
+        },
+        stagger: 0.1
+    }).to(".movemeV, .movemeH, .grid rect", {
+        height: (el) => {
+            return el < 11 ? "100%" : el < 22 ? 1 : el < 29 ? ".1%" : 1;
+        },
+        width: (el) => {
+            return el < 11 ? 1 : el < 22 ? "100%" : el < 29 ? 1 : 0;
+        }
+    });
+tl.play(138);
