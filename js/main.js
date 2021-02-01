@@ -749,37 +749,63 @@ tl.set("circle", { opacity: 0 })
         r: 25,
         repeat: 3,
         yoyo: true
-    }).to(".cols circle", {
-        r: () => { return Math.random() * 20 + 1 },
+    })
+    // bounce all circles to random r
+    .to(".cols circle", {
+        r: () => {
+            return Math.random() * 20 + 1
+        },
         repeat: 1,
         yoyo: true
     }).to(".cols circle", {
-        r: () => { return Math.random() * 20 + 1 },
+        r: () => {
+            return Math.random() * 20 + 1
+        },
         repeat: 1,
         yoyo: true
     }).to(".cols circle", {
-        r: () => { return Math.random() * 20 + 1 },
+        r: () => {
+            return Math.random() * 20 + 1
+        },
         repeat: 1,
         yoyo: true,
         stagger: 0.01
-    }).set(".grid, #blob", {
-        x: (el) => { return el == 0 ? "-150%" : "-100%" },
-        y: (el) => { return el == 0 ? "-150%" : "-100%" },
+    })
+    // set blob and grid visible but off screen
+    .set(".grid, #blob", {
+        x: (el) => {
+            return el == 0 ? "-150%" : "-100%"
+        },
+        y: (el) => {
+            return el == 0 ? "-150%" : "-100%"
+        },
         opacity: 1
     }).set(".grid rect", {
         opacity: 1
-    }).to(".grid, #blob", {
-        x: (el) => { return el == 0 ? 0 : "90%" },
-        y: (el) => { return el == 0 ? 0 : "90%" },
+    })
+    // move grid back to home position and blob off the opposite corner
+    .to(".grid, #blob", {
+        x: (el) => {
+            return el == 0 ? 0 : "90%"
+        },
+        y: (el) => {
+            return el == 0 ? 0 : "90%"
+        },
         ease: "sine.inOut",
-        scale: (el) => { return el == 0 ? 1 : 1.5 },
+        scale: (el) => {
+            return el == 0 ? 1 : 1.5
+        },
         duration: 2.5
-    }).set("#blob", {
+    })
+    // reset blob
+    .set("#blob", {
         scale: 1,
         x: 0,
         y: 0,
         opacity: 0
-    }).to(".grid rect", {
+    })
+    // rotate grid rects
+    .to(".grid rect", {
         rotation: 45,
         repeat: 1,
         yoyo: true
@@ -788,16 +814,22 @@ tl.set("circle", { opacity: 0 })
         repeat: 1,
         yoyo: true
     }).to(".grid rect", {
-        rotation: (el) => { return el < 10 ? 30 : -45 },
+        rotation: (el) => {
+            return el < 11 ? 30 : -45
+        },
         repeat: 1,
         yoyo: true,
         transformOrigin: "bottom right"
     }).to(".grid rect", {
-        rotation: (el) => { return el < 10 ? -30 : 45 },
+        rotation: (el) => {
+            return el < 11 ? -30 : 45
+        },
         repeat: 1,
         yoyo: true,
         transformOrigin: "bottom right"
-    }).to(".movemeV, .movemeH", {
+    })
+    // slide moveme rects
+    .to(".movemeV, .movemeH", {
         height: (el) => {
             return el < 7 ? randPercent() : 1;
         },
@@ -805,7 +837,9 @@ tl.set("circle", { opacity: 0 })
             return el < 7 ? 1 : randPercent();
         },
         stagger: 0.1
-    }).to(".grid rect", {
+    })
+    // slide grid rects then repeat
+    .to(".grid rect", {
         height: (el) => {
             return el < 11 ? randPercent() : 1;
         },
@@ -854,7 +888,9 @@ tl.set("circle", { opacity: 0 })
         },
         stagger: 0.1,
         stroke: highlightColor
-    }).to(".movemeV, .movemeH, .grid rect", {
+    })
+    // made by accident swapping the order of (el), but keeping it for a random slide effect
+    .to(".movemeV, .movemeH, .grid rect", {
         height: (el) => {
             return el < 7 ? ".1%" : el < 14 ? 1 : el < 25 ? "100%" : 1;
         },
@@ -862,12 +898,18 @@ tl.set("circle", { opacity: 0 })
             return el < 7 ? 1 : el < 14 ? 0 : el < 25 ? 1 : "100%";
         },
         stagger: 0.1
-    }).to(".movemeV, .movemeH, .grid rect", {
+    })
+    // moveme rects to 0, grid rects to 100%
+    .to(".movemeV, .movemeH, .grid rect", {
         height: (el) => {
             return el < 11 ? "100%" : el < 22 ? 1 : el < 29 ? ".1%" : 1;
         },
         width: (el) => {
             return el < 11 ? 1 : el < 22 ? "100%" : el < 29 ? 1 : 0;
         }
+    }).set(".movemeV, .movemeH", {
+        height: (el) => { return el < 7 ? 0 : 1 },
+        opacity: 0,
+        duration: 0.7
     });
-tl.play(138);
+tl.play();
