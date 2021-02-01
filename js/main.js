@@ -709,5 +709,13 @@ tl.set("circle", { opacity: 0 })
         r: 25,
         repeat: 3,
         yoyo: true
+    }).to(".cols .col2.row2, .cols .col3.row6, .cols .col4.row2, .cols .col5.row1, .cols .col6.row9, .cols .col7.row3, .cols .col8.row4, .cols .col9.row8", {
+        r: 25,
+        repeat: 3,
+        yoyo: true
+    }).to(".cols .col0.row10, .cols .col1.row9, .cols .col2.row8, .cols .col3.row7, .cols .col4.row6, .cols .col5.row5, .cols .col6.row4, .cols .col7.row3, .cols .col8.row2, .cols .col9.row1, .cols .col10.row0, .cols .col4.row4, .cols .col6.row6", {
+        r: 25,
+        repeat: 3,
+        yoyo: true
     })
 tl.play(110)
