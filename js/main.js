@@ -717,5 +717,15 @@ tl.set("circle", { opacity: 0 })
         r: 25,
         repeat: 3,
         yoyo: true
+    }).to(".cols .col0.row10, .cols .col1.row9, .cols .col2.row8, .cols .col3.row7, .cols .col4.row6, .cols .col5.row5, .cols .col6.row4, .cols .col7.row3, .cols .col8.row2, .cols .col9.row1, .cols .col10.row0, .cols .col0.row0, .cols .col1.row1, .cols .col2.row2, .cols .col3.row3, .cols .col4.row4, .cols .col6.row6, .cols .col7.row7, .cols .col8.row8, .cols .col9.row9, .cols .col10.row10", {
+        r: 25,
+        repeat: 3,
+        yoyo: true,
+        stroke: highlightColor
     })
-tl.play(110)
+    .to(".cols .col1.row9, .cols .col2.row8, .cols .col3.row7, .cols .col4.row6, .cols .col5.row5, .cols .col6.row4, .cols .col7.row3, .cols .col8.row2, .cols .col9.row1, .cols .col9.row2, .cols .col8.row3, .cols .col7.row4, .cols .col6.row5, .cols .col5.row6, .cols .col4.row7, .cols .col3.row8, .cols .col2.row9, .cols .col8.row1, .cols .col7.row2, .cols .col6.row3, .cols .col5.row4, .cols .col4.row5, .cols .col3.row6, .cols .col2.row7, .cols .col1.row8, .cols .col4.row4, .cols .col6.row6, .cols .col3.row5, .cols .col7.row5, .cols .col8.row4, .cols .col2.row5, .cols .col5.row3, .cols .col4.row3, .cols .col2.row6 ", {
+        r: 25,
+        repeat: 4,
+        yoyo: true
+    })
+tl.play(128)
