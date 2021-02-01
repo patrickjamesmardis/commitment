@@ -685,7 +685,7 @@ tl.set("circle", { opacity: 0 })
         y: 0,
         opacity: 0,
     })
-    .set(".cols .col2.row2, .cols .col3.row7, .cols .col7.row2, .cols .col7.row4, .cols .col4.row5, .cols .col8.row2", {
+    .set(".cols circle", {
         r: 0,
         opacity: 1,
     })
@@ -697,11 +697,15 @@ tl.set("circle", { opacity: 0 })
         r: 25,
         repeat: 3,
         yoyo: true
-    }).to(".cols .col7.row2", {
+    }).to(".cols .col7.row2, .cols .col7.row8", {
         r: 25,
         repeat: 3,
         yoyo: true
     }).to(".cols .col7.row4, .cols .col4.row5, .cols .col8.row2", {
+        r: 25,
+        repeat: 3,
+        yoyo: true
+    }).to(".cols .col3.row3, .cols .col4.row4, .cols .col5.row5, .cols .col6.row6, .cols .col7.row7", {
         r: 25,
         repeat: 3,
         yoyo: true
