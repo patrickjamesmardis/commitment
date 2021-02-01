@@ -312,8 +312,13 @@ tl.set("circle", { opacity: 0 })
     }).to(".grid .horizontal", {
         width: 0,
         stagger: 0.1
+    }).set(".grid .vertical", {
+        height: "100%",
+        opacity: 0
+    }).set(".grid .horizontal", {
+        width: "100%",
+        opacity: 0
     })
-
     // dots grid back
     .set(".rows circle", {
         stroke: "#333"
@@ -742,29 +747,34 @@ tl.set("circle", { opacity: 0 })
         repeat: 3,
         yoyo: true
     }).to(".cols circle", {
-        r: () => { return Math.random() * 50 },
+        r: () => { return Math.random() * 20 + 1 },
         repeat: 1,
         yoyo: true
     }).to(".cols circle", {
-        r: () => { return Math.random() * 50 },
+        r: () => { return Math.random() * 20 + 1 },
         repeat: 1,
         yoyo: true
     }).to(".cols circle", {
-        r: () => { return Math.random() * 50 },
+        r: () => { return Math.random() * 20 + 1 },
         repeat: 1,
         yoyo: true,
         stagger: 0.01
-    }).set("#blob", {
-        x: "-100%",
-        y: "-100%",
+    }).set(".grid, #blob", {
+        x: (el) => { return el == 0 ? "-150%" : "-100%" },
+        y: (el) => { return el == 0 ? "-150%" : "-100%" },
         opacity: 1
-    })
-    .to("#blob", {
-        x: "100%",
-        y: "100%",
-        scale: 2,
+    }).set(".grid rect", {
+        opacity: 1
+    }).to(".grid, #blob", {
+        x: (el) => { return el == 0 ? 0 : "90%" },
+        y: (el) => { return el == 0 ? 0 : "90%" },
+        ease: "sine.inOut",
+        scale: (el) => { return el == 0 ? 1 : 1.5 },
         duration: 2.5
     }).set("path", {
-        scale: 1
+        scale: 1,
+        x: 0,
+        y: 0,
+        opacity: 0
     })
-tl.play(132)
+tl.play()
