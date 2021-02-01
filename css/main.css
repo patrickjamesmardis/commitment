@@ -29,3 +29,10 @@ svg {
     left: 0;
 }
 
+text.hello {
+    font-family: 'IBM Plex Mono';
+    fill: #dfdfdf;
+    position: fixed;
+    opacity: 0;
+    font-size: 36px;
+}

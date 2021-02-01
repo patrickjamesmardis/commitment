@@ -39,13 +39,22 @@ tl.set("circle", { opacity: 0 })
         repeatDelay: .3,
         ease: "circ.inout"
     })
+    .to(".hello", {
+        opacity: 1,
+        stagger: 0.14
+    })
+    .to(".hello", {
+        opacity: 0,
+        stagger: 0.2
+    })
     // reset center circle then stagger center line opacity
     .set(".rows .row5.col5", {
         r: 1,
         opacity: 0
     }).to(".rows .row5", {
         opacity: 1,
-        stagger: 0.25
+        stagger: 0.25,
+
     })
     // make rows look like they duplicate themselves
     .set(".rows .row4, .rows .row6", {
@@ -673,4 +682,4 @@ tl.set("circle", { opacity: 0 })
         y: 0,
         opacity: 0
     })
-tl.play()
+tl.play(10)
