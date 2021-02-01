@@ -685,19 +685,25 @@ tl.set("circle", { opacity: 0 })
         y: 0,
         opacity: 0,
     })
+    // set dots to 0 radius and full opacity
     .set(".cols circle", {
         r: 0,
         opacity: 1,
     })
+    // bounce 1 circle's radius
     .to(".cols .col2.row2", {
         r: 25,
         repeat: 3,
         yoyo: true
-    }).to(".cols .col3.row7", {
+    })
+    // bounce another another
+    .to(".cols .col3.row7", {
         r: 25,
         repeat: 3,
         yoyo: true
-    }).to(".cols .col7.row2, .cols .col7.row8", {
+    })
+    // bounce 2 circles, then follow fibonacci sequence til screen is full
+    .to(".cols .col7.row2, .cols .col7.row8", {
         r: 25,
         repeat: 3,
         yoyo: true
@@ -736,8 +742,17 @@ tl.set("circle", { opacity: 0 })
         repeat: 3,
         yoyo: true
     }).to(".cols circle", {
-        r: 25,
-        repeat: 3,
+        r: () => { return Math.random() * 50 },
+        repeat: 1,
         yoyo: true
+    }).to(".cols circle", {
+        r: () => { return Math.random() * 50 },
+        repeat: 1,
+        yoyo: true
+    }).to(".cols circle", {
+        r: () => { return Math.random() * 50 },
+        repeat: 1,
+        yoyo: true,
+        stagger: 0.01
     })
-tl.play(128)
+tl.play(132)
