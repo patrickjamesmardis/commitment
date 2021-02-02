@@ -949,5 +949,22 @@ tl.set("circle", { opacity: 0 })
         y: () => { return .1 * h }
     }).to("#movemeV1", {
         height: "10%"
+    }).set("#movemeH2", {
+        height: 1,
+        width: 0,
+        opacity: 1,
+        x: () => { return .2 * w },
+        y: () => { return -.2 * h }
+    }).to("#movemeH2", {
+        width: "10%",
+        delay: .3
+    }).set("#movemeV2", {
+        width: 1,
+        height: 0,
+        opacity: 1,
+        x: () => { return -.3 * w },
+        y: () => { return .2 * h }
+    }).to("#movemeV2", {
+        height: "10%"
     })
 tl.play(163);
