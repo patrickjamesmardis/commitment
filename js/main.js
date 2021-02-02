@@ -450,6 +450,11 @@ tl.set("circle", { opacity: 0 })
         opacity: 1,
         duration: 2
     })
+    // reset dashed circle
+    .set("#dashCircle", {
+        r: 0,
+        opacity: 0
+    })
     // stagger in dots grid
     .to(".cols circle", {
         opacity: 1,
