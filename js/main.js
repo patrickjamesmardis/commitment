@@ -1264,4 +1264,4 @@ tl.set("circle", { opacity: 0 })
     }).to("#movemeV9", {
         height: "10%"
     })
-tl.play(175);
+tl.play();
