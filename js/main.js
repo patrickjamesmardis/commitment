@@ -242,17 +242,17 @@ tl.set("circle", { opacity: 0 })
     // slide moveme rects out to random widths/heights
     .set(".movemeV, .movemeH", {
         width: (el) => {
-            return el < 9 ? 1 : 0;
+            return el < 10 ? 1 : 0;
         },
         height: (el) => {
-            return el < 9 ? ".1%" : 1;
+            return el < 10 ? ".1%" : 1;
         }
     }).to(".movemeV, .movemeH", {
         height: (el) => {
-            return el < 9 ? randPercent() : 1;
+            return el < 10 ? randPercent() : 1;
         },
         width: (el) => {
-            return el < 9 ? 1 : randPercent();
+            return el < 10 ? 1 : randPercent();
         },
         stagger: 0.1
     })
@@ -263,37 +263,37 @@ tl.set("circle", { opacity: 0 })
     // slide moveme rects again and change to highlight color, then slide again
     .to(".movemeV, .movemeH", {
         width: (el) => {
-            return el < 9 ? 1 : 0;
+            return el < 10 ? 1 : 0;
         },
         height: (el) => {
-            return el < 9 ? ".1%" : 1;
+            return el < 10 ? ".1%" : 1;
         },
         stagger: 0.1
     }).to(".movemeV, .movemeH", {
         height: (el) => {
-            return el < 9 ? randPercent() : 1;
+            return el < 10 ? randPercent() : 1;
         },
         width: (el) => {
-            return el < 9 ? 1 : randPercent();
+            return el < 10 ? 1 : randPercent();
         },
         stroke: highlightColor,
         stagger: 0.1
     }).to(".movemeV, .movemeH", {
         width: (el) => {
-            return el < 9 ? 1 : 0;
+            return el < 10 ? 1 : 0;
         },
         height: (el) => {
-            return el < 9 ? ".1%" : 1;
+            return el < 10 ? ".1%" : 1;
         },
         stagger: 0.1,
     }).set(".movemeV, .movemeH", {
         stroke: "#dfdfdf"
     }).to(".movemeV, .movemeH", {
         height: (el) => {
-            return el < 9 ? randPercent() : 1;
+            return el < 10 ? randPercent() : 1;
         },
         width: (el) => {
-            return el < 9 ? 1 : randPercent();
+            return el < 10 ? 1 : randPercent();
         },
         stroke: highlightColor,
         stagger: 0.1
@@ -332,70 +332,70 @@ tl.set("circle", { opacity: 0 })
     .set(".movemeV, .movemeH", {
         opacity: 1,
         width: (el) => {
-            return el < 9 ? 1 : 0;
+            return el < 10 ? 1 : 0;
         },
         height: (el) => {
-            return el < 9 ? ".1%" : 1;
+            return el < 10 ? ".1%" : 1;
         }
     }).to(".movemeV, .movemeH", {
         height: (el) => {
-            return el < 9 ? randPercent() : 1;
+            return el < 10 ? randPercent() : 1;
         },
         width: (el) => {
-            return el < 9 ? 1 : randPercent();
+            return el < 10 ? 1 : randPercent();
         },
         stroke: highlightColor,
         stagger: 0.1
     }).to(".movemeV, .movemeH", {
         width: (el) => {
-            return el < 9 ? 1 : 0;
+            return el < 10 ? 1 : 0;
         },
         height: (el) => {
-            return el < 9 ? ".1%" : 1;
+            return el < 10 ? ".1%" : 1;
         },
         stagger: 0.1
     }).set(".movemeV, .movemeH", {
         stroke: "#dfdfdf"
     }).to(".movemeV, .movemeH", {
         height: (el) => {
-            return el < 9 ? randPercent() : 1;
+            return el < 10 ? randPercent() : 1;
         },
         width: (el) => {
-            return el < 9 ? 1 : randPercent();
+            return el < 10 ? 1 : randPercent();
         },
         stroke: highlightColor,
         stagger: 0.1
     }).to(".movemeV, .movemeH", {
         width: (el) => {
-            return el < 9 ? 1 : 0;
+            return el < 10 ? 1 : 0;
         },
         height: (el) => {
-            return el < 9 ? ".1%" : 1;
+            return el < 10 ? ".1%" : 1;
         },
         stagger: 0.1
     }).set(".movemeV, .movemeH", {
         stroke: "#dfdfdf"
     }).to(".movemeV, .movemeH", {
         height: (el) => {
-            return el < 9 ? randPercent() : 1;
+            return el < 10 ? randPercent() : 1;
         },
         width: (el) => {
-            return el < 9 ? 1 : randPercent();
+            return el < 10 ? 1 : randPercent();
         },
         stroke: highlightColor,
         stagger: 0.1
     }).to(".movemeV, .movemeH", {
         width: (el) => {
-            return el < 9 ? 1 : 0;
+            return el < 10 ? 1 : 0;
         },
         height: (el) => {
-            return el < 9 ? ".1%" : 1;
+            return el < 10 ? ".1%" : 1;
         },
         stagger: 0.1
     }).set(".movemeV, .movemeH", {
         stroke: "#dfdfdf",
         height: (el) => {
-            return el < 9 ? 0 : 1;
+            return el < 10 ? 0 : 1;
         },
     })
     // rotate dots grid
@@ -835,10 +835,10 @@ tl.set("circle", { opacity: 0 })
     // slide moveme rects
     .to(".movemeV, .movemeH", {
         height: (el) => {
-            return el < 9 ? randPercent() : 1;
+            return el < 10 ? randPercent() : 1;
         },
         width: (el) => {
-            return el < 9 ? 1 : randPercent();
+            return el < 10 ? 1 : randPercent();
         },
         stagger: 0.1
     })
@@ -853,10 +853,10 @@ tl.set("circle", { opacity: 0 })
         stagger: 0.1
     }).to(".movemeV, .movemeH", {
         height: (el) => {
-            return el < 9 ? randPercent() : 1;
+            return el < 10 ? randPercent() : 1;
         },
         width: (el) => {
-            return el < 9 ? 1 : randPercent();
+            return el < 10 ? 1 : randPercent();
         },
         stagger: 0.1
     }).to(".grid rect", {
@@ -869,10 +869,10 @@ tl.set("circle", { opacity: 0 })
         stagger: 0.1
     }).to(".movemeV, .movemeH", {
         height: (el) => {
-            return el < 9 ? randPercent() : 1;
+            return el < 10 ? randPercent() : 1;
         },
         width: (el) => {
-            return el < 9 ? 1 : randPercent();
+            return el < 10 ? 1 : randPercent();
         },
         stagger: 0.1
     }).to(".grid rect", {
@@ -885,10 +885,10 @@ tl.set("circle", { opacity: 0 })
         stagger: 0.1
     }).to(".movemeV, .movemeH", {
         height: (el) => {
-            return el < 9 ? randPercent() : 1;
+            return el < 10 ? randPercent() : 1;
         },
         width: (el) => {
-            return el < 9 ? 1 : randPercent();
+            return el < 10 ? 1 : randPercent();
         },
         stagger: 0.1,
         stroke: highlightColor
@@ -896,10 +896,10 @@ tl.set("circle", { opacity: 0 })
     // made by accident swapping the order of (el), but keeping it for a random slide effect
     .to(".movemeV, .movemeH, .grid rect", {
         height: (el) => {
-            return el < 9 ? ".1%" : el < 18 ? 1 : el < 29 ? "100%" : 1;
+            return el < 10 ? ".1%" : el < 18 ? 1 : el < 29 ? "100%" : 1;
         },
         width: (el) => {
-            return el < 9 ? 1 : el < 18 ? 0 : el < 29 ? 1 : "100%";
+            return el < 10 ? 1 : el < 18 ? 0 : el < 29 ? 1 : "100%";
         },
         stagger: 0.1
     })
@@ -912,7 +912,7 @@ tl.set("circle", { opacity: 0 })
             return el < 11 ? 1 : el < 22 ? "100%" : el < 31 ? 1 : 0;
         }
     }).set(".movemeV, .movemeH", {
-        height: (el) => { return el < 9 ? 0 : 1 },
+        height: (el) => { return el < 10 ? 0 : 1 },
         opacity: 0,
         duration: 0.7
     }).set("#movemeH0", {
@@ -1071,10 +1071,10 @@ tl.set("circle", { opacity: 0 })
     }).to(".movemeV, .movemeH", {
         opacity: 0,
         width: (el) => {
-            return el < 9 ? 1 : 0
+            return el < 10 ? 1 : 0
         },
         height: (el) => {
-            return el < 9 ? ".1%" : 1
+            return el < 10 ? ".1%" : 1
         }
     }).set("#movemeH0", {
         height: 1,
@@ -1211,6 +1211,23 @@ tl.set("circle", { opacity: 0 })
         x: 0,
         y: () => { return .7 * h }
     }).to("#movemeV7", {
+        height: "10%"
+    }).set("#movemeH8", {
+        height: 1,
+        width: 0,
+        opacity: 1,
+        x: () => { return .8 * w },
+        y: () => { return -.1 * h }
+    }).to("#movemeH8", {
+        width: "10%",
+        delay: .3
+    }).set("#movemeV8", {
+        width: 1,
+        height: 0,
+        opacity: 1,
+        x: 0,
+        y: () => { return .8 * h }
+    }).to("#movemeV8", {
         height: "10%"
     })
 tl.play(189);
