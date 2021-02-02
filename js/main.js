@@ -51,6 +51,27 @@ window.addEventListener("resize", () => {
     tl.play(time);
 })
 
+// gsap takes over the links' opacity, so use mouseenter and mouseleave to change opacity on hover
+const links = document.querySelectorAll("nav a");
+links.forEach(link => {
+    link.addEventListener("mouseenter", () => {
+        console.log(link);
+        tl.to(link, {
+            opacity: 0.5,
+            duration: 0.1
+        })
+    })
+});
+
+links.forEach(link => {
+    console.log(link);
+    link.addEventListener("mouseleave", () => {
+        tl.to(link, {
+            opacity: 1,
+            duration: 0.1
+        })
+    })
+});
 // hide all circles
 tl.set("circle", { opacity: 0 })
     // pulse center circle
@@ -1386,6 +1407,9 @@ tl.set("circle", { opacity: 0 })
         opacity: 0,
         duration: 2,
         stagger: .004
+    }).set("nav", {
+        display: "flex"
+    }).to("nav a", {
+        opacity: 1
     })
-
 tl.play(0);
