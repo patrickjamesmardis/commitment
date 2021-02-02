@@ -1325,4 +1325,8 @@ tl.set("circle", { opacity: 0 })
         x: 0,
         y: 0
     })
+    // grid opacity 0
+    .to(".grid", {
+        opacity: 0
+    })
 tl.play(189);
