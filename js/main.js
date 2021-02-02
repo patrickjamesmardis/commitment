@@ -45,9 +45,8 @@ window.addEventListener("mousemove", () => {
 }, false);
 
 window.addEventListener("resize", () => {
-    tl.pause();
-    const time = tl.totalTime();
-    tl.play(time);
+    w = window.innerWidth;
+    h = window.innerHeight;
 })
 
 // gsap takes over the links' opacity, so use mouseenter and mouseleave to change opacity on hover
