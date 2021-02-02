@@ -1352,4 +1352,11 @@ tl.set("circle", { opacity: 0 })
     .to(".grid", {
         opacity: 0
     })
-tl.play(0);
+    // dashed circle up
+    .to("#dashCircle", {
+        r: 10,
+        opacity: 1,
+        duration: 2
+    })
+
+tl.play(190);
