@@ -1284,4 +1284,15 @@ tl.set("circle", { opacity: 0 })
         x: 0,
         y: 0
     })
+    // to bottom right
+    .to(".movemeV, .movemeH", {
+        x: (el) => {
+            return el < 10 ? 0 : .9 * w
+        },
+        y: (el) => {
+            return el < 10 ? .9 * h : 0
+        },
+        repeat: 3,
+        yoyo: true
+    })
 tl.play(189);
