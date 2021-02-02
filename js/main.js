@@ -1068,5 +1068,13 @@ tl.set("circle", { opacity: 0 })
         y: () => { return .3 * h }
     }).to("#movemeV8", {
         height: "10%"
+    }).to(".movemeV, .movemeH", {
+        opacity: 0,
+        width: (el) => {
+            return el < 9 ? 1 : 0
+        },
+        height: (el) => {
+            return el < 9 ? ".1%" : 1
+        }
     })
 tl.play(173);
