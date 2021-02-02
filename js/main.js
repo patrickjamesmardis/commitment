@@ -1373,8 +1373,12 @@ tl.set("circle", { opacity: 0 })
         duration: 5
     }).to(".cols circle", {
         opacity: 1,
-        duration: 3,
+        duration: 2,
         stagger: .002
+    }).to(".cols circle", {
+        opacity: 0,
+        duration: 2,
+        stagger: .004
     })
 
 tl.play(217);
