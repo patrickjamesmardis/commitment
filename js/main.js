@@ -1371,6 +1371,10 @@ tl.set("circle", { opacity: 0 })
         r: 0,
         opacity: 0,
         duration: 5
+    }).to(".cols circle", {
+        opacity: 1,
+        duration: 3,
+        stagger: .002
     })
 
-tl.play(219);
+tl.play(217);
