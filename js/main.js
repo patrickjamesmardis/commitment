@@ -1292,7 +1292,16 @@ tl.set("circle", { opacity: 0 })
         y: (el) => {
             return el < 10 ? .9 * h : 0
         },
-        repeat: 3,
+        repeat: 1,
         yoyo: true
+    })
+    .to(".movemeV, .movemeH", {
+        width: (el) => {
+            return el < 10 ? 1 : "100%"
+        },
+        height: (el) => {
+            return el < 10 ? "100%" : 1
+        }
+
     })
 tl.play(189);
