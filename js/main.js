@@ -1403,9 +1403,46 @@ tl.set("circle", { opacity: 0 })
         opacity: 0,
         duration: 2,
         stagger: .004
+    }).set("#pjm", {
+        x: () => { return (w - 583.3) / 2 },
+        y: () => { return (h - 236.77) / 2 }
+    }).to("#pjm", {
+        opacity: 1
+    }).to("#pjm .circle", {
+        x: (el) => { return el < 1 ? -.1 * w : 0 },
+        y: (el) => { return el < 1 ? 0 : -.1 * h },
+        stagger: 0.1,
+        duration: .7,
+        ease: "sine.out"
+    }).to("#pjm .circle", {
+        x: 0,
+        y: 0,
+        stagger: 0.1,
+        duration: .8,
+        ease: "sine.in"
+    }).to("#pjm .circle", {
+        x: (el) => { return el < 1 ? -.1 * w : 0 },
+        y: (el) => { return el < 1 ? 0 : -.1 * h },
+        stagger: 0.1,
+        delay: .3,
+        duration: .7,
+        ease: "sine.out"
+    }).to("#pjm .circle", {
+        x: 0,
+        y: 0,
+        stagger: 0.1,
+        duration: .8,
+        ease: "sine.in"
+    }).to("#pjm path", {
+        x: (el) => { return Math.random() * 1000 - 500 },
+        y: (el) => { return Math.random() * 1000 - 500 },
+        opacity: 0,
+        delay: .3,
+        duration: .7,
+        ease: "sine.out"
     }).set("nav", {
         display: "flex"
     }).to("nav a", {
         opacity: 1
     })
-tl.play(0);
+tl.play(222);
