@@ -1,3 +1,6 @@
+let w = window.innerWidth;
+let h = window.innerHeight;
+
 let tl = gsap.timeline();
 tl.pause();
 let highlightColor = "#0000FF";
@@ -475,10 +478,10 @@ tl.set("circle", { opacity: 0 })
     // stretch out rectangle
     .set("#movemeV0", {
         x: () => {
-            return (window.innerWidth / 2) - (.2 * window.innerWidth);
+            return (w / 2) - (.2 * w);
         },
         y: () => {
-            return (window.innerHeight / 2) - (.2 * window.innerHeight);
+            return (h / 2) - (.2 * h);
         },
         width: 1,
         height: 1
@@ -925,9 +928,26 @@ tl.set("circle", { opacity: 0 })
         width: 1,
         height: 0,
         opacity: 1,
-        x: () => { return .1 * window.innerWidth },
+        x: () => { return .1 * w },
         y: 0
     }).to("#movemeV0", {
+        height: "10%"
+    }).set("#movemeH1", {
+        height: 1,
+        width: 0,
+        opacity: 1,
+        x: () => { return .1 * w },
+        y: () => { return -.2 * h }
+    }).to("#movemeH1", {
+        width: "10%",
+        delay: .3
+    }).set("#movemeV1", {
+        width: 1,
+        height: 0,
+        opacity: 1,
+        x: 0,
+        y: () => { return .1 * h }
+    }).to("#movemeV1", {
         height: "10%"
     })
 tl.play(163);
