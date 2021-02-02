@@ -1076,5 +1076,22 @@ tl.set("circle", { opacity: 0 })
         height: (el) => {
             return el < 9 ? ".1%" : 1
         }
+    }).set("#movemeH0", {
+        height: 1,
+        width: 0,
+        opacity: 1,
+        x: 0,
+        y: () => { return -.1 * h }
+    }).to("#movemeH0", {
+        width: "10%",
+        delay: .3
+    }).set("#movemeV0", {
+        width: 1,
+        height: 0,
+        opacity: 1,
+        x: () => { return 0 * w },
+        y: 0
+    }).to("#movemeV0", {
+        height: "10%"
     })
-tl.play(173);
+tl.play(184);
