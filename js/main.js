@@ -47,7 +47,6 @@ window.addEventListener("mousemove", () => {
 window.addEventListener("resize", () => {
     tl.pause();
     const time = tl.totalTime();
-    console.log(time);
     tl.play(time);
 })
 
@@ -55,7 +54,6 @@ window.addEventListener("resize", () => {
 const links = document.querySelectorAll("nav a");
 links.forEach(link => {
     link.addEventListener("mouseenter", () => {
-        console.log(link);
         tl.to(link, {
             opacity: 0.5,
             duration: 0.1
@@ -64,7 +62,6 @@ links.forEach(link => {
 });
 
 links.forEach(link => {
-    console.log(link);
     link.addEventListener("mouseleave", () => {
         tl.to(link, {
             opacity: 1,
