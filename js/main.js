@@ -1195,5 +1195,22 @@ tl.set("circle", { opacity: 0 })
         y: () => { return .6 * h }
     }).to("#movemeV6", {
         height: "10%"
+    }).set("#movemeH7", {
+        height: 1,
+        width: 0,
+        opacity: 1,
+        x: () => { return .7 * w },
+        y: () => { return -.1 * h }
+    }).to("#movemeH7", {
+        width: "10%",
+        delay: .3
+    }).set("#movemeV7", {
+        width: 1,
+        height: 0,
+        opacity: 1,
+        x: 0,
+        y: () => { return .7 * h }
+    }).to("#movemeV7", {
+        height: "10%"
     })
 tl.play(189);
