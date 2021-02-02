@@ -1304,4 +1304,25 @@ tl.set("circle", { opacity: 0 })
             return el < 10 ? "100%" : 1
         }
     })
+    // to 0 w/h
+    .to(".movemeV, .movemeH", {
+        width: (el) => {
+            return el < 10 ? 1 : ".1%"
+        },
+        height: (el) => {
+            return el < 10 ? ".1%" : 1
+        },
+        x: () => {
+            return .5 * w;
+        },
+        y: (el) => {
+            return .5 * h;
+        },
+    })
+    .set(".movemeV, .movemeH", {
+        width: 0,
+        height: 0,
+        x: 0,
+        y: 0
+    })
 tl.play(189);
