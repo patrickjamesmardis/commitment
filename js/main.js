@@ -517,7 +517,8 @@ tl.set("circle", { opacity: 0 })
         x: 0,
         y: 0,
         width: 0,
-        height: 0
+        height: 0,
+        strokeWidth: 1
     }).to(".cols", {
         transformOrigin: "center center",
         rotation: 180,
@@ -911,5 +912,22 @@ tl.set("circle", { opacity: 0 })
         height: (el) => { return el < 7 ? 0 : 1 },
         opacity: 0,
         duration: 0.7
-    });
-tl.play();
+    }).set("#movemeH0", {
+        height: 1,
+        width: 0,
+        opacity: 1,
+        x: 0,
+        y: 0
+    }).to("#movemeH0", {
+        width: "10%",
+        delay: .3
+    }).set("#movemeV0", {
+        width: 1,
+        height: 0,
+        opacity: 1,
+        x: () => { return .1 * window.innerWidth },
+        y: 0
+    }).to("#movemeV0", {
+        height: "10%"
+    })
+tl.play(163);
