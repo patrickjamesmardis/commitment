@@ -1329,4 +1329,4 @@ tl.set("circle", { opacity: 0 })
     .to(".grid", {
         opacity: 0
     })
-tl.play(189);
+tl.play(0);
