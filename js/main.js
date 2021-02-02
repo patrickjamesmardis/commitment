@@ -1068,6 +1068,23 @@ tl.set("circle", { opacity: 0 })
         y: () => { return .3 * h }
     }).to("#movemeV8", {
         height: "10%"
+    }).set("#movemeH9", {
+        height: 1,
+        width: 0,
+        opacity: 1,
+        x: () => { return .5 * w },
+        y: () => { return -.4 * h }
+    }).to("#movemeH9", {
+        width: "10%",
+        delay: .3
+    }).set("#movemeV9", {
+        width: 1,
+        height: 0,
+        opacity: 1,
+        x: () => { return -.2 * w },
+        y: () => { return .3 * h }
+    }).to("#movemeV9", {
+        height: "10%"
     }).to(".movemeV, .movemeH", {
         opacity: 0,
         width: (el) => {
@@ -1247,4 +1264,4 @@ tl.set("circle", { opacity: 0 })
     }).to("#movemeV9", {
         height: "10%"
     })
-tl.play(189);
+tl.play(175);
