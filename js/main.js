@@ -1363,6 +1363,10 @@ tl.set("circle", { opacity: 0 })
         duration: 3,
         repeat: 5,
         yoyo: true
+    }).to("#dashCircle", {
+        r: 0,
+        opacity: 0,
+        duration: 5
     })
 
 tl.play(190);
