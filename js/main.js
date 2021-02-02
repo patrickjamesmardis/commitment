@@ -1444,5 +1444,5 @@ tl.set("circle", { opacity: 0 })
         display: "flex"
     }).to("nav a", {
         opacity: 1
-    })
-tl.play(222);
+    });
+tl.play(0);
