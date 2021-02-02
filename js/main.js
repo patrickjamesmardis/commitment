@@ -1369,4 +1369,4 @@ tl.set("circle", { opacity: 0 })
         duration: 5
     })
 
-tl.play(190);
+tl.play(0);
