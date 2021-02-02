@@ -75,8 +75,7 @@ tl.set("circle", { opacity: 0 })
         opacity: 0
     }).to(".rows .row5", {
         opacity: 1,
-        stagger: 0.25,
-
+        stagger: 0.25
     })
     // make rows look like they duplicate themselves
     .set(".rows .row4, .rows .row6", {
@@ -798,6 +797,11 @@ tl.set("circle", { opacity: 0 })
         yoyo: true,
         stagger: 0.01
     })
+    // reset dots
+    .set(".cols circle", {
+        r: 1,
+        opacity: 0
+    })
     // set blob and grid visible but off screen
     .set(".grid, #blob", {
         x: (el) => {
@@ -1369,4 +1373,4 @@ tl.set("circle", { opacity: 0 })
         duration: 5
     })
 
-tl.play(0);
+tl.play(219);
