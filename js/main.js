@@ -33,7 +33,7 @@ let hideCursor = () => {
     });
 }
 // after 3 seconds run hideCursor()
-let mouseTimeout = setTimeout(() => { hideCursor(); }, 3000)
+let mouseTimeout = setTimeout(() => { hideCursor(); }, 3000);
 
 // on mousemove, reveal the cursor then hide after 3 seconds
 window.addEventListener("mousemove", () => {
@@ -43,6 +43,13 @@ window.addEventListener("mousemove", () => {
     });
     mouseTimeout = setTimeout(() => { hideCursor(); }, 3000);
 }, false);
+
+window.addEventListener("resize", () => {
+    tl.pause();
+    const time = tl.totalTime();
+    console.log(time);
+    tl.play(time);
+})
 
 // hide all circles
 tl.set("circle", { opacity: 0 })
@@ -1381,4 +1388,4 @@ tl.set("circle", { opacity: 0 })
         stagger: .004
     })
 
-tl.play(217);
+tl.play(0);
