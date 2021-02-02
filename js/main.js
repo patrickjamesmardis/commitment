@@ -1051,5 +1051,22 @@ tl.set("circle", { opacity: 0 })
         y: () => { return .7 * h }
     }).to("#movemeV7", {
         height: "10%"
+    }).set("#movemeH8", {
+        height: 1,
+        width: 0,
+        opacity: 1,
+        x: () => { return .8 * w },
+        y: () => { return -.4 * h }
+    }).to("#movemeH8", {
+        width: "10%",
+        delay: .3
+    }).set("#movemeV8", {
+        width: 1,
+        height: 0,
+        opacity: 1,
+        x: () => { return -.1 * w },
+        y: () => { return .3 * h }
+    }).to("#movemeV8", {
+        height: "10%"
     })
-tl.play(170);
+tl.play(173);
