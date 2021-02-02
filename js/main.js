@@ -26,6 +26,24 @@ const randPercent = () => {
     return (Math.floor(Math.random() * 11) * 10) + "%";
 }
 
+// hide the cursor
+let hideCursor = () => {
+    document.querySelectorAll("body *").forEach(el => {
+        el.style.cursor = "none"
+    });
+}
+// after 3 seconds run hideCursor()
+let mouseTimeout = setTimeout(() => { hideCursor(); }, 3000)
+
+// on mousemove, reveal the cursor then hide after 3 seconds
+window.addEventListener("mousemove", () => {
+    clearTimeout(mouseTimeout);
+    document.querySelectorAll("body *").forEach(el => {
+        el.style.cursor = "auto"
+    });
+    mouseTimeout = setTimeout(() => { hideCursor(); }, 3000);
+}, false);
+
 // hide all circles
 tl.set("circle", { opacity: 0 })
     // pulse center circle
