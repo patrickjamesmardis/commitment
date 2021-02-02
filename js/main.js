@@ -1178,5 +1178,22 @@ tl.set("circle", { opacity: 0 })
         y: () => { return .5 * h }
     }).to("#movemeV5", {
         height: "10%"
+    }).set("#movemeH6", {
+        height: 1,
+        width: 0,
+        opacity: 1,
+        x: () => { return .6 * w },
+        y: () => { return -.1 * h }
+    }).to("#movemeH6", {
+        width: "10%",
+        delay: .3
+    }).set("#movemeV6", {
+        width: 1,
+        height: 0,
+        opacity: 1,
+        x: 0,
+        y: () => { return .6 * h }
+    }).to("#movemeV6", {
+        height: "10%"
     })
-tl.play(184);
+tl.play(189);
