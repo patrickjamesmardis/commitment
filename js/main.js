@@ -1354,9 +1354,15 @@ tl.set("circle", { opacity: 0 })
     })
     // dashed circle up
     .to("#dashCircle", {
-        r: 10,
+        r: 25,
         opacity: 1,
-        duration: 2
+        duration: 4
+    }).to("#dashCircle", {
+        r: 10,
+        opacity: 0.3,
+        duration: 3,
+        repeat: 5,
+        yoyo: true
     })
 
 tl.play(190);
