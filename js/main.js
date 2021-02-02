@@ -1229,5 +1229,22 @@ tl.set("circle", { opacity: 0 })
         y: () => { return .8 * h }
     }).to("#movemeV8", {
         height: "10%"
+    }).set("#movemeH9", {
+        height: 1,
+        width: 0,
+        opacity: 1,
+        x: () => { return .9 * w },
+        y: () => 0
+    }).to("#movemeH9", {
+        width: "10%",
+        delay: .3
+    }).set("#movemeV9", {
+        width: 1,
+        height: 0,
+        opacity: 1,
+        x: () => { return .1 * w },
+        y: () => { return .9 * h }
+    }).to("#movemeV9", {
+        height: "10%"
     })
 tl.play(189);
