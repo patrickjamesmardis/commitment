@@ -915,7 +915,9 @@ tl.set("circle", { opacity: 0 })
         height: (el) => { return el < 10 ? 0 : 1 },
         opacity: 0,
         duration: 0.7
-    }).set("#movemeH0", {
+    })
+    // move 10% w/h lines to different positions
+    .set("#movemeH0", {
         height: 1,
         width: 0,
         opacity: 1,
@@ -1093,7 +1095,9 @@ tl.set("circle", { opacity: 0 })
         height: (el) => {
             return el < 10 ? ".1%" : 1
         }
-    }).set("#movemeH0", {
+    })
+    // zig zag diag
+    .set("#movemeH0", {
         height: 1,
         width: 0,
         opacity: 1,
@@ -1251,7 +1255,7 @@ tl.set("circle", { opacity: 0 })
         width: 0,
         opacity: 1,
         x: () => { return .9 * w },
-        y: () => 0
+        y: () => { return -.1 * h }
     }).to("#movemeH9", {
         width: "10%",
         delay: .3
@@ -1259,9 +1263,14 @@ tl.set("circle", { opacity: 0 })
         width: 1,
         height: 0,
         opacity: 1,
-        x: () => { return .1 * w },
+        x: 0,
         y: () => { return .9 * h }
     }).to("#movemeV9", {
         height: "10%"
     })
-tl.play();
+    // all to original x,y
+    .to(".movemeV, .movemeH", {
+        x: 0,
+        y: 0
+    })
+tl.play(189);
