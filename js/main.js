@@ -478,7 +478,7 @@ tl.set("circle", { opacity: 0 })
     // stretch out rectangle
     .set("#movemeV0", {
         x: () => {
-            return (w / 2) - (.2 * w);
+            return (w / 2) - (.3 * w);
         },
         y: () => {
             return (h / 2) - (.2 * h);
@@ -1004,7 +1004,7 @@ tl.set("circle", { opacity: 0 })
         height: 1,
         width: 0,
         opacity: 1,
-        x: () => { return .5 * w },
+        x: () => { return .4 * w },
         y: () => { return -.5 * h }
     }).to("#movemeH5", {
         width: "10%",
@@ -1013,9 +1013,9 @@ tl.set("circle", { opacity: 0 })
         width: 1,
         height: 0,
         opacity: 1,
-        x: () => { return .5 * w },
-        y: () => { return .5 * h }
+        x: 0,
+        y: () => { return .4 * h }
     }).to("#movemeV5", {
         height: "10%"
     })
-tl.play();
+tl.play(170);
