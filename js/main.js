@@ -1105,7 +1105,7 @@ tl.set("circle", { opacity: 0 })
         y: () => { return -.1 * h }
     }).to("#movemeH0", {
         width: "10%",
-        delay: .3
+        duration: .1
     }).set("#movemeV0", {
         width: 1,
         height: 0,
@@ -1113,7 +1113,8 @@ tl.set("circle", { opacity: 0 })
         x: 0,
         y: 0
     }).to("#movemeV0", {
-        height: "10%"
+        height: "10%",
+        duration: .1
     }).set("#movemeH1", {
         height: 1,
         width: 0,
@@ -1122,7 +1123,7 @@ tl.set("circle", { opacity: 0 })
         y: () => { return -.1 * h }
     }).to("#movemeH1", {
         width: "10%",
-        delay: .3
+        duration: .1
     }).set("#movemeV1", {
         width: 1,
         height: 0,
@@ -1130,7 +1131,8 @@ tl.set("circle", { opacity: 0 })
         x: 0,
         y: () => { return .1 * h }
     }).to("#movemeV1", {
-        height: "10%"
+        height: "10%",
+        duration: .1
     }).set("#movemeH2", {
         height: 1,
         width: 0,
@@ -1139,7 +1141,7 @@ tl.set("circle", { opacity: 0 })
         y: () => { return -.1 * h }
     }).to("#movemeH2", {
         width: "10%",
-        delay: .3
+        duration: .1
     }).set("#movemeV2", {
         width: 1,
         height: 0,
@@ -1147,16 +1149,18 @@ tl.set("circle", { opacity: 0 })
         x: 0,
         y: () => { return .2 * h }
     }).to("#movemeV2", {
-        height: "10%"
+        height: "10%",
+        duration: .1
     }).set("#movemeH3", {
         height: 1,
         width: 0,
         opacity: 1,
         x: () => { return .3 * w },
-        y: () => { return -.1 * h }
+        y: () => { return -.1 * h },
+        duration: 0.2
     }).to("#movemeH3", {
         width: "10%",
-        delay: .3
+        duration: .1
     }).set("#movemeV3", {
         width: 1,
         height: 0,
@@ -1164,7 +1168,8 @@ tl.set("circle", { opacity: 0 })
         x: 0,
         y: () => { return .3 * h }
     }).to("#movemeV3", {
-        height: "10%"
+        height: "10%",
+        duration: .1
     }).set("#movemeH4", {
         height: 1,
         width: 0,
@@ -1173,7 +1178,7 @@ tl.set("circle", { opacity: 0 })
         y: () => { return -.1 * h }
     }).to("#movemeH4", {
         width: "10%",
-        delay: .3
+        duration: .1
     }).set("#movemeV4", {
         width: 1,
         height: 0,
@@ -1181,7 +1186,8 @@ tl.set("circle", { opacity: 0 })
         x: 0,
         y: () => { return .4 * h }
     }).to("#movemeV4", {
-        height: "10%"
+        height: "10%",
+        duration: .1
     }).set("#movemeH5", {
         height: 1,
         width: 0,
@@ -1190,7 +1196,7 @@ tl.set("circle", { opacity: 0 })
         y: () => { return -.1 * h }
     }).to("#movemeH5", {
         width: "10%",
-        delay: .3
+        duration: .1
     }).set("#movemeV5", {
         width: 1,
         height: 0,
@@ -1198,7 +1204,8 @@ tl.set("circle", { opacity: 0 })
         x: 0,
         y: () => { return .5 * h }
     }).to("#movemeV5", {
-        height: "10%"
+        height: "10%",
+        duration: .1
     }).set("#movemeH6", {
         height: 1,
         width: 0,
@@ -1207,7 +1214,7 @@ tl.set("circle", { opacity: 0 })
         y: () => { return -.1 * h }
     }).to("#movemeH6", {
         width: "10%",
-        delay: .3
+        duration: .1
     }).set("#movemeV6", {
         width: 1,
         height: 0,
@@ -1215,7 +1222,8 @@ tl.set("circle", { opacity: 0 })
         x: 0,
         y: () => { return .6 * h }
     }).to("#movemeV6", {
-        height: "10%"
+        height: "10%",
+        duration: .1
     }).set("#movemeH7", {
         height: 1,
         width: 0,
@@ -1224,7 +1232,7 @@ tl.set("circle", { opacity: 0 })
         y: () => { return -.1 * h }
     }).to("#movemeH7", {
         width: "10%",
-        delay: .3
+        duration: .1
     }).set("#movemeV7", {
         width: 1,
         height: 0,
@@ -1232,7 +1240,8 @@ tl.set("circle", { opacity: 0 })
         x: 0,
         y: () => { return .7 * h }
     }).to("#movemeV7", {
-        height: "10%"
+        height: "10%",
+        duration: .1
     }).set("#movemeH8", {
         height: 1,
         width: 0,
@@ -1241,7 +1250,7 @@ tl.set("circle", { opacity: 0 })
         y: () => { return -.1 * h }
     }).to("#movemeH8", {
         width: "10%",
-        delay: .3
+        duration: .1
     }).set("#movemeV8", {
         width: 1,
         height: 0,
@@ -1249,7 +1258,8 @@ tl.set("circle", { opacity: 0 })
         x: 0,
         y: () => { return .8 * h }
     }).to("#movemeV8", {
-        height: "10%"
+        height: "10%",
+        duration: .1
     }).set("#movemeH9", {
         height: 1,
         width: 0,
@@ -1258,7 +1268,7 @@ tl.set("circle", { opacity: 0 })
         y: () => { return -.1 * h }
     }).to("#movemeH9", {
         width: "10%",
-        delay: .3
+        duration: .1
     }).set("#movemeV9", {
         width: 1,
         height: 0,
@@ -1266,7 +1276,8 @@ tl.set("circle", { opacity: 0 })
         x: 0,
         y: () => { return .9 * h }
     }).to("#movemeV9", {
-        height: "10%"
+        height: "10%",
+        duration: .1
     })
     // all to original x,y
     .to(".movemeV, .movemeH", {
