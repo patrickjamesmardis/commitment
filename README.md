@@ -1,7 +1,7 @@
 # Commitment
 ### ATLS 4519 | Creative Web Development
 
-[creative.colorado.edu/~pama4904/dev/commitment](https://creative.colorado.edu/~pama4904/dev/commitment)
+[commitment.patrickjam.es](https://commitment.patrickjam.es)
 
 I took this assignment as an opportunity to explore [Greensock's GSAP](https://greensock.com/), bringing a "stream-of-consciousness" approach to the ```gsap.timeline()```. I was introduced to GSAP in an "Animation for the Web" course through [SuperHi](https://www.superhi.com/courses/animation-for-the-web-svg-css-and-javascript) during winter break.
 
